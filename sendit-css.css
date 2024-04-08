@@ -1,0 +1,98 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #ddd;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.services {
+    padding: 50px;
+    background-color: #fff;
+}
+
+.services h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.services ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.featured {
+    text-align: center;
+    padding: 50px;
+    background-color: #f5f5f5;
+}
+
+.testimonials {
+    padding: 50px;
+    background-color: #fff;
+}
+
+.contact {
+    text-align: center;
+    padding: 50px;
+    background-color: #f5f5f5;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .hero h1 {
+        font-size: 24px;
+    }
+    
+    .services h2, .testimonials h2, .contact h2 {
+        font-size: 20px;
+    }
+}
