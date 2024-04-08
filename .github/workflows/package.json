@@ -1,0 +1,19 @@
+{
+  "name": "sendit-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sendit-js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Arose5148: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@github.com/Arose5148/sendit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arose5148/sendit/issues"
+  },
+  "homepage": "https://github.com/Arose5148/sendit#readme"
+}
