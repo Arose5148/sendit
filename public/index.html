@@ -9,35 +9,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="logo.jpg" alt="SendIt in Style Logo">
-            </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Header -->
+<header>
+    <nav>
+        <div class="logo">
+            <img src="logo.jpg" alt="SendIt in Style Logo">
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="social-media">
+            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+        </div>
+    </nav>
+</header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Send It</h1>
-            <a href="#about" class="cta-button">Learn More</a>
+            <h1>Send It In Style</h1>
+            <a href="#testimonials" class="cta-button">Go Big</a>
         </div>
     </section>
 
     <div class="content-wrapper">
         <!-- Services Section -->
         <section id="services" class="services tile-section">
-            <h2>Custom Services</h2>
+            <h2>Services Offered</h2>
             <div class="service-grid">
                 <div class="service-item">
                     <img src="wheels.jpg" alt="Wheels">
@@ -70,13 +75,13 @@
         <section id="about" class="about tile-section">
             <h2>About Send It</h2>
             <div class="about-content">
-                <p>Carmen sure knows his way around a dirt bike. The guy behind Send It has been fixing up rides and hitting tracks in the Laurel Highlands for years. He's all about getting his hands dirty and making sure your machine is dialed in just right. He's also the man when it comes to custom metal coatings. Got a hub that needs vapor blasting? Done. Want to Cerakote your engine parts or even your guns? Carmen's all over it. He'll hook you up.</p>
+                <p>Carmen sure knows a thing or two about dirt bikes. The guy behind <i>Send It</i> has been fixing up rides and hitting tracks in the Laurel Highlands for years. He's all about getting his hands dirty and making sure your machine is dialed in just right. He's also the man when it comes to custom metal coatings. Got a hub that needs vapor blasting? Done. Want to Cerakote your engine parts or even your guns? Carmen's all over it. He'll hook you up.</p>
             </div>
         </section>
 		
         <!-- Gallery Section -->
         <section id="gallery" class="gallery tile-section">
-            <h2>Gallery</h2>
+            <h2>Gallery of Work</h2>
             <div class="gallery-grid">
                 <img src="gallery1.jpg" alt="Gallery Image 1">
                 <img src="gallery2.jpg" alt="Gallery Image 2">
@@ -102,40 +107,31 @@
 			</div>
 		</section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact tile-section">
-            <h2>Contact Us</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> carmen@sendit.works</p>
-                <p><i class="fas fa-map-marker-alt"></i> Uniontown, PA</p>
-            </div>
-            <div class="contact-form">
-                <form action="submit-form.php" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
+<!-- Contact Section -->
+<section id="contact" class="contact tile-section">
+    <h2>Contact Us Today</h2>
+    <div class="contact-form">
+        <form action="submit-form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="logo">
-                <img src="logo.jpg" alt="SendIt in Style Logo">
-            </div>
-            <div class="social-media">
-                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-            </div>
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="contact-info">
+		    <p><i class="fas fa-map-marker-alt"></i> Uniontown, PA</p>
+            <p><i class="fas fa-envelope"></i> carmen@sendit.works</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 SendIt. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Send It. All rights reserved.</p>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>
