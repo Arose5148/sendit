@@ -83,12 +83,12 @@
 	<section id="gallery" class="gallery tile-section">
 		<h2>Gallery of Work</h2>
 		<div class="gallery-grid">
-			<img src="gallery1.jpg" alt="Gallery Image 1">
-			<img src="gallery2.jpg" alt="Gallery Image 2">
-			<img src="gallery3.jpg" alt="Gallery Image 3">
-			<img src="gallery4.jpg" alt="Gallery Image 4">
-			<img src="gallery5.jpg" alt="Gallery Image 5">
-			<img src="gallery6.jpg" alt="Gallery Image 6">
+			<img src="gallery1.jpg" alt="Gallery Image 1" onclick="openLightbox(this)">
+			<img src="gallery2.jpg" alt="Gallery Image 2" onclick="openLightbox(this)">
+			<img src="gallery3.jpg" alt="Gallery Image 3" onclick="openLightbox(this)">
+			<img src="gallery4.jpg" alt="Gallery Image 4" onclick="openLightbox(this)">
+			<img src="gallery5.jpg" alt="Gallery Image 5" onclick="openLightbox(this)">
+			<img src="gallery6.jpg" alt="Gallery Image 6" onclick="openLightbox(this)">
 		</div>
 	</section>
 
@@ -132,7 +132,14 @@
 			<p>&copy; 2024 SendIt. All rights reserved.</p>
 		</div>
 	</footer>
-
-    <script src="script.js"></script>
+	
+	<!-- Lightbox -->
+	<div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImage" src="" alt="Lightbox Image">
+	</div>
+	
+	<script src="script.js"></script>
+	
 </body>
 </html>
