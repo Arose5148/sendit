@@ -56,7 +56,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff9900;
+    color: #d87000;
 }
 
 .social-media {
@@ -72,7 +72,7 @@ nav ul li a:hover {
 }
 
 .social-media a:hover {
-    color: #ff9900;
+    color: #d87000;
 }
 
 /* Hero Section */
@@ -230,7 +230,7 @@ section h2 {
 .testimonial-item {
     padding: 60px;
     text-align: center;
-	border: 2px solid #ff9900;
+	border: 2px solid #d87000;
 }
 
 .testimonial-item p {
@@ -242,7 +242,7 @@ section h2 {
 
 .testimonial-author {
     font-weight: bold;
-    color: #ff9900;
+    color: #d87000;
     text-transform: uppercase;
 }
 
@@ -281,7 +281,6 @@ section h2 {
 
 .contact-form button {
     display: block;
-    width: 100%;
     padding: 12px;
     background-color: #d87000;
     color: #fff;
@@ -293,8 +292,29 @@ section h2 {
 	margin-bottom: 10px;
 }
 
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+.contact-form button {
+display: block;
+background-color: #d87000;
+color: #fff;
+font-size: 18px;
+border: none;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
 .contact-form button:hover {
-    background-color: #e68a00;
+background-color: #e68a00;
 }
 
 
