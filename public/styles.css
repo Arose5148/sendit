@@ -1,11 +1,11 @@
-/* sendit-css.css */
+/* styles.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 /* Header */
@@ -91,27 +91,37 @@ nav ul li a:hover {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
-	margin-bottom: 20px;
+	margin-bottom: -20px;
 }
 
 .hero h1 {
     font-family: 'Bangers', cursive;
     font-size: 120px;
     margin-bottom: 0px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
+.hero h1 .subtitle {
+    display: block;
+    font-size: 44px;
+    margin-top: -70px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
 .cta-button {
     display: inline-block;
-    padding: 12px 30px;
-    background-color: #ff9900;
+    padding: 12px 40px;
+    background-color: #d87000;
     color: #fff;
     text-decoration: none;
     font-family: 'Impact';
 	font-size: 24px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-	margin-top: 0px;
+	margin-top: 40px;
 }
 
 .cta-button:hover {
@@ -131,11 +141,14 @@ section {
 
 section h2 {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 20px;
-	font-family: 'Impact', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 2px;
+    font-size: 42px;
+    margin-bottom: 30px;
+    font-family: 'Impact', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #d87000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-weight: normal;
 }
 
 /* Tile Section */
@@ -175,8 +188,13 @@ section h2 {
 }
 
 .service-item h3 {
-    font-size: 24px;
-	margin-top: 0;
+	font-size: 24px;
+	font-family: 'Arial', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	color: #000;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Gallery Section */
@@ -210,18 +228,22 @@ section h2 {
 }
 
 .testimonial-item {
-    padding: 20px;
+    padding: 60px;
     text-align: center;
 	border: 2px solid #ff9900;
 }
 
 .testimonial-item p {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-style: italic;
+    color: #555;
 }
 
 .testimonial-author {
     font-weight: bold;
+    color: #ff9900;
+    text-transform: uppercase;
 }
 
 .testimonial-author {
