@@ -42,7 +42,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -56,6 +56,22 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+    color: #ff9900;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 20px;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
     color: #ff9900;
 }
 
@@ -75,12 +91,13 @@ nav ul li a:hover {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+	margin-bottom: 20px;
 }
 
 .hero h1 {
     font-family: 'Bangers', cursive;
     font-size: 120px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -90,9 +107,11 @@ nav ul li a:hover {
     background-color: #ff9900;
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-family: 'Impact';
+	font-size: 24px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+	margin-top: 0px;
 }
 
 .cta-button:hover {
@@ -103,25 +122,30 @@ nav ul li a:hover {
 .content-wrapper {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 40px 20px;
 }
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 section h2 {
     text-align: center;
     font-size: 36px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+	font-family: 'Impact', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 /* Tile Section */
 .tile-section {
     background-color: #fff;
-    padding: 10px;
+    padding: 10px 10px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1150px; /* Adjust the value as desired */
+	margin-bottom: 20px;
 }
 
 /* About Section */
@@ -129,14 +153,15 @@ section h2 {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+	font-size: 18px
 }
 
 /* Services Section */
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 40px;
-    margin-top: 40px;
+    grid-gap: 20px;
+    margin-top: 0px;
 }
 
 .service-item {
@@ -146,11 +171,12 @@ section h2 {
 .service-item img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .service-item h3 {
     font-size: 24px;
+	margin-top: 0;
 }
 
 /* Gallery Section */
@@ -158,7 +184,7 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    margin-top: 40px;
+    margin-top: 0px;
 }
 
 .gallery-grid img {
@@ -168,7 +194,7 @@ section h2 {
 
 /* Testimonials Section */
 .testimonials {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .testimonials h2 {
@@ -186,6 +212,7 @@ section h2 {
 .testimonial-item {
     padding: 20px;
     text-align: center;
+	border: 2px solid #ff9900;
 }
 
 .testimonial-item p {
@@ -241,17 +268,19 @@ section h2 {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+	margin-bottom: 10px;
 }
 
 .contact-form button:hover {
     background-color: #e68a00;
 }
 
+
 /* Footer */
 footer {
     background-color: #000;
     color: #fff;
-    padding: 40px 0;
+    padding: 0px 0;
     text-align: center;
 }
 
@@ -260,20 +289,14 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 20px;
 }
 
-.social-media a {
-    color: #fff;
-    font-size: 24px;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.social-media a:hover {
-    color: #ff9900;
+.contact-info p {
+    margin: 0px 0;
+    font-size: 18px;
 }
 
 .footer-bottom {
+    margin-top: 0px;
     font-size: 14px;
 }
