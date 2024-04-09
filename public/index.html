@@ -6,16 +6,18 @@
     <title>SendIt in Style</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav>
             <div class="logo">
-                <img src="logo.png" alt="SendIt in Style Logo">
+                <img src="logo.jpg" alt="SendIt in Style Logo">
             </div>
             <ul>
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
@@ -28,85 +30,95 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Send It</h1>
-            <a href="#contact" class="cta-button">Get a Quote</a>
+            <a href="#about" class="cta-button">Learn More</a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>Custom Services</h2>
-        <div class="service-grid">
-            <div class="service-item">
-                <img src="wheels.jpg" alt="Wheels">
-                <h3>Wheels</h3>
+    <div class="content-wrapper">
+        <!-- Services Section -->
+        <section id="services" class="services tile-section">
+            <h2>Custom Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <img src="wheels.jpg" alt="Wheels">
+                    <h3>Wheels</h3>
+                </div>
+                <div class="service-item">
+                    <img src="suspension.jpg" alt="Suspension">
+                    <h3>Suspension</h3>
+                </div>
+                <div class="service-item">
+                    <img src="brakes.jpg" alt="Brakes">
+                    <h3>Brakes</h3>
+                </div>
+                <div class="service-item">
+                    <img src="engines.jpg" alt="Engines">
+                    <h3>Engines</h3>
+                </div>
+                <div class="service-item">
+                    <img src="wet-blasting.jpg" alt="Wet Blasting">
+                    <h3>Wet Blasting</h3>
+                </div>
+                <div class="service-item">
+                    <img src="cerakote.jpg" alt="CERAKOTE">
+                    <h3>CERAKOTE</h3>
+                </div>
             </div>
-            <div class="service-item">
-                <img src="suspension.jpg" alt="Suspension">
-                <h3>Suspension</h3>
+        </section>
+		
+        <!-- About Section -->
+        <section id="about" class="about tile-section">
+            <h2>About Send It</h2>
+            <div class="about-content">
+                <p>Carmen, the guy behind Send It, knows his way around a dirt bike. He's been fixing up rides and hitting the tracks Laurel Highlands for years. Carmen's all about getting his hands dirty and making sure your machine is dialed in just right. He's also the man when it comes to custom metal coatings. Got a hub that needs vapor blasting? Done. Want to Cerakote your engine parts or even your guns? Carmen's all over it. He'll hook you up.</p>
             </div>
-            <div class="service-item">
-                <img src="brakes.jpg" alt="Brakes">
-                <h3>Brakes</h3>
+        </section>
+		
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery tile-section">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="gallery1.jpg" alt="Gallery Image 1">
+                <img src="gallery2.jpg" alt="Gallery Image 2">
+                <img src="gallery3.jpg" alt="Gallery Image 3">
+                <img src="gallery4.jpg" alt="Gallery Image 4">
+                <img src="gallery5.jpg" alt="Gallery Image 5">
+                <img src="gallery6.jpg" alt="Gallery Image 6">
             </div>
-            <div class="service-item">
-                <img src="engines.jpg" alt="Engines">
-                <h3>Engines</h3>
-            </div>
-            <div class="service-item">
-                <img src="wet-blasting.jpg" alt="Wet Blasting">
-                <h3>Wet Blasting</h3>
-            </div>
-            <div class="service-item">
-                <img src="cerakote.jpg" alt="CERAKOTE">
-                <h3>CERAKOTE</h3>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <img src="gallery1.jpg" alt="Gallery Image 1">
-            <img src="gallery2.jpg" alt="Gallery Image 2">
-            <img src="gallery3.jpg" alt="Gallery Image 3">
-            <img src="gallery4.jpg" alt="Gallery Image 4">
-            <img src="gallery5.jpg" alt="Gallery Image 5">
-            <img src="gallery6.jpg" alt="Gallery Image 6">
-        </div>
-    </section>
+		<!-- Testimonials Section -->
+		<section id="testimonials" class="testimonials tile-section">
+			<h2>Customer Testimonials</h2>
+			<div class="testimonial-grid">
+				<div class="testimonial-item tile-section">
+					<p>"Send It transformed my machine to a whole other level. The attention to detail and quality of work is outstanding!"</p>
+					<p class="testimonial-author">- John Doe</p>
+				</div>
+				<div class="testimonial-item tile-section">
+					<p>"I couldn't be happier with the custom services provided by Send It. My bike looks and performs better than ever!"</p>
+					<p class="testimonial-author">- Jane Smith</p>
+				</div>
+			</div>
+		</section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2>Customer Testimonials</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-item">
-                <p>"Send It transformed my machine to a whole other level. The attention to detail and quality of work is outstanding!"</p>
-                <p class="testimonial-author">- John Doe</p>
+        <!-- Contact Section -->
+        <section id="contact" class="contact tile-section">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> carmen@sendit.works</p>
+                <p><i class="fas fa-map-marker-alt"></i> Uniontown, PA</p>
             </div>
-            <div class="testimonial-item">
-                <p>"I couldn't be happier with the custom services provided by Send It. My bike looks and performs better than ever!"</p>
-                <p class="testimonial-author">- Jane Smith</p>
+            <div class="contact-form">
+                <form action="submit-form.php" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> carmen@sendit.works</p>
-            <p><i class="fas fa-map-marker-alt"></i> Uniontown,PA</p>
-        </div>
-        <div class="contact-form">
-            <form>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -121,7 +133,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 SendIt. All rights reserved.</p>
+            <p>&copy; 2024 SendIt. All rights reserved.</p>
         </div>
     </footer>
 
