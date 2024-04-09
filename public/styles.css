@@ -99,6 +99,7 @@ nav ul li a:hover {
     font-size: 120px;
     margin-bottom: 0px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.8);
+	letter-spacing: 4px;
 }
 
 .hero h1 .subtitle {
