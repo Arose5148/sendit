@@ -33,3 +33,33 @@ function handleLightboxClick(event) {
 // Attach event listener to the lightbox element
 var lightbox = document.getElementById("lightbox");
 lightbox.addEventListener("click", handleLightboxClick);
+
+// Enhance form submission with AJAX for asynchronous behavior
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission action
+
+            // Create FormData object from the form
+            const formData = new FormData(this);
+
+            // Perform the fetch request to send form data
+            fetch('/submit-form', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(html => {
+                // Update the DOM with a success message or redirect, etc.
+                // Here we'll assume you want to display a simple message
+                // You can modify this part to suit your specific needs
+                document.body.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error processing your request. Please try again later.');
+            });
+        });
+    }
+});
