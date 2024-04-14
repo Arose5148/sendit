@@ -1,4 +1,7 @@
 /* styles.css */
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
