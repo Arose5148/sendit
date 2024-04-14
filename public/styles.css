@@ -412,3 +412,38 @@ footer {
     margin-top: 0px;
     font-size: 14px;
 }
+
+/* Responsive Navigation */
+@media screen and (max-width: 768px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .menu-toggle:hover {
+    color: #d87000;
+  }
+
+  #menu-checkbox:checked ~ ul {
+    display: block;
+  }
+}
