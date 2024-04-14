@@ -2,7 +2,9 @@
   "name": "sendit-website",
   "version": "1.0.0",
   "main": "server.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://Arose5148: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@github.com/Arose5148/sendit.git"
@@ -13,5 +15,9 @@
     "url": "https://github.com/Arose5148/sendit/issues"
   },
   "homepage": "https://github.com/Arose5148/sendit#readme",
-  "description": ""
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemailer": "^6.6.3",
+    "body-parser": "^1.19.0"
+  }
 }
