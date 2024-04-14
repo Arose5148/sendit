@@ -38,22 +38,20 @@ lightbox.addEventListener("click", handleLightboxClick);
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.contact-form');
     if (form) {
+        console.log("Form found, adding event listener");
         form.addEventListener('submit', function(event) {
+            console.log("Form element on submit:", form);
             event.preventDefault(); // Prevent the default form submission action
+            
+            const formData = new FormData(form);
+            console.log("FormData prepared", Array.from(formData.entries())); // To see the form data
 
-            // Create FormData object from the form
-            const formData = new FormData(this);
-
-            // Perform the fetch request to send form data
             fetch('/submit-form', {
                 method: 'POST',
                 body: formData
             })
             .then(response => response.text())
             .then(html => {
-                // Update the DOM with a success message or redirect, etc.
-                // Here we'll assume you want to display a simple message
-                // You can modify this part to suit your specific needs
                 document.body.innerHTML = html;
             })
             .catch(error => {
@@ -61,5 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('There was an error processing your request. Please try again later.');
             });
         });
+    } else {
+        console.log("Form not found");
     }
 });
+
