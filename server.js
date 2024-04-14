@@ -4,6 +4,7 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 
 const PORT = process.env.PORT || 3000;
+const PUBLIC_DIR = path.join(__dirname, 'public');
 
 const server = http.createServer((req, res) => {
   if (req.method === 'POST' && req.url === '/submit-form') {
@@ -47,8 +48,21 @@ const server = http.createServer((req, res) => {
       });
     });
   } else {
-    // Serve static files from the 'public' directory
-    // ... (Keep the existing code for serving static files)
+    const filePath = path.join(PUBLIC_DIR, req.url === '/' ? 'index.html' : req.url);
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        if (err.code === 'ENOENT') {
+          res.writeHead(404);
+          res.end('File not found');
+        } else {
+          res.writeHead(500);
+          res.end('Internal Server Error');
+        }
+      } else {
+        res.writeHead(200);
+        res.end(content);
+      }
+    });
   }
 });
 
