@@ -19,8 +19,6 @@ app.get('/', (req, res) => {
 // Handle POST request from the form
 app.post('/submit-form', (req, res) => {
   const { name, email, message } = req.body;
-
-  // Configure your email service provider settings here
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -38,14 +36,41 @@ app.post('/submit-form', (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log('Error:', error);
-      res.status(500).send('Oops! Something went wrong. Please try again later.');
+      res.status(500).send(`
+        <html>
+        <head>
+          <title>Submission Error</title>
+          <link rel="stylesheet" href="/styles.css">
+        </head>
+        <body>
+          <div class="container">
+            <h1>Submission Error</h1>
+            <p>Oops! Something went wrong. Please try again later.</p>
+            <a href="/" class="button">Return Home</a>
+          </div>
+        </body>
+        </html>
+      `);
     } else {
-      console.log('Email sent:', info.response);
-      res.send('Thank you for your message. We will get back to you soon.');
+      res.send(`
+        <html>
+        <head>
+          <title>Submission Received</title>
+          <link rel="stylesheet" href="/styles.css">
+        </head>
+        <body>
+          <div class="container">
+            <h1>Thank You, ${name}!</h1>
+            <p>Your message has been sent successfully. We will get back to you soon.</p>
+            <a href="/" class="button">Return Home</a>
+          </div>
+        </body>
+        </html>
+      `);
     }
   });
 });
+
 
 // Start the server
 app.listen(PORT, () => {
