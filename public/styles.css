@@ -355,29 +355,34 @@ section h2 {
 
 /* Confirmation Page Styles */
 .container {
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 20px;
   text-align: center;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .container h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #d87000;
 }
 
 .container p {
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #333;
 }
 
 .button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 30px;
   background-color: #d87000;
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
