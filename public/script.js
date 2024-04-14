@@ -31,3 +31,8 @@ function handleLightboxClick(event) {
 // Attach event listener to the lightbox element
 var lightbox = document.getElementById("lightbox");
 lightbox.addEventListener("click", handleLightboxClick);
+
+//Close the hamburger menu when making a selection
+function closeMenu() {
+    document.getElementById('menu-checkbox').checked = false;
+}

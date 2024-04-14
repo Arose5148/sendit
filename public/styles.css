@@ -28,6 +28,11 @@ nav {
   padding: 0 20px;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
 .logo img {
   max-height: 40px;
 }
@@ -43,6 +48,7 @@ nav {
   color: #fff;
   font-size: 24px;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 /* Style the navigation menu */
@@ -51,12 +57,11 @@ nav {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 .menu li {
-  margin: 0 10px;
+  margin-left: 20px;
 }
 
 .menu li a {
@@ -424,6 +429,7 @@ footer {
     align-items: flex-start;
     padding: 20px;
     transition: left 0.3s ease;
+    z-index: 998;
   }
 
   .menu li {
@@ -432,5 +438,12 @@ footer {
 
   .menu-checkbox:checked ~ .menu {
     left: 0;
+  }
+
+  .menu-checkbox:checked ~ .menu-toggle {
+    position: fixed;
+    left: 250px;
+    top: 20px;
+    z-index: 999;
   }
 }
