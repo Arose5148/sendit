@@ -420,7 +420,7 @@ footer {
   .menu {
     position: fixed;
     top: 60px;
-    left: -250px;
+    left: 100%;
     width: 250px;
     height: calc(100vh - 60px);
     background-color: #000;
