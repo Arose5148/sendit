@@ -36,31 +36,38 @@ lightbox.addEventListener("click", handleLightboxClick);
 
 // Enhance form submission with AJAX for asynchronous behavior
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.contact-form');
-    if (form) {
-        console.log("Form found, adding event listener");
-        form.addEventListener('submit', function(event) {
-            console.log("Form element on submit:", form);
-            event.preventDefault(); // Prevent the default form submission action
-            
-            const formData = new FormData(form);
-            console.log("FormData prepared", Array.from(formData.entries())); // To see the form data
+    const form = document.getElementById('uniqueFormId');
+    console.log("Selected form:", form);
 
-            fetch('/submit-form', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(html => {
-                document.body.innerHTML = html;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('There was an error processing your request. Please try again later.');
-            });
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            console.log("Form submission prevented.");
+
+            try {
+                const formData = new FormData(form);
+                console.log("FormData prepared", Array.from(formData.entries()));
+
+                fetch('/submit-form', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(html => {
+                    document.body.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error processing your request. Please try again later.');
+                });
+            } catch (error) {
+                console.error("Error creating FormData or submitting form:", error);
+            }
         });
     } else {
-        console.log("Form not found");
+        console.log("Form not found with given ID.");
     }
 });
+
+
 
