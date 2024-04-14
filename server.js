@@ -33,58 +33,28 @@ const server = http.createServer((req, res) => {
         service: 'gmail',
         auth: {
           user: 'sendit.works.node@gmail.com',
-          pass: 'wkvk amjh bayc hwmi'
+          pass: 'wkvk amjh bayc hwmi '
         }
       });
 
       const mailOptions = {
         from: email,
         to: 'carmen@sendit.works',
-        subject: 'New message from SendIt contact form',
+        subject: 'New message from SendIt in Style contact form',
         text: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`
       };
 
-		transporter.sendMail(mailOptions, (error, info) => {
-		  if (error) {
-			console.error('Error sending email:', error);
-			res.writeHead(500, { 'Content-Type': 'text/html' });
-			res.end(`
-			  <!DOCTYPE html>
-			  <html>
-				<head>
-				  <title>Error</title>
-				  <link rel="stylesheet" href="/styles.css">
-				</head>
-				<body>
-				  <div class="container">
-					<h1>Oops! Something went wrong.</h1>
-					<p>There was an error processing your request. Please try again later.</p>
-					<a href="/" class="button">Go back to the main page</a>
-				  </div>
-				</body>
-			  </html>
-			`);
-		  } else {
-			console.log('Email sent:', info.response);
-			res.writeHead(200, { 'Content-Type': 'text/html' });
-			res.end(`
-			  <!DOCTYPE html>
-			  <html>
-				<head>
-				  <title>Success</title>
-				  <link rel="stylesheet" href="styles.css">
-				</head>
-				<body>
-				  <div class="container">
-					<h1>Thank you for your message!</h1>
-					<p>We have received your message and will get back to you soon.</p>
-					<a href="/" class="button">Go back to the main page</a>
-				  </div>
-				</body>
-			  </html>
-			`);
-		  }
-		});
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.log('Error:', error);
+          res.writeHead(500, { 'Content-Type': 'text/plain' });
+          res.end('Oops! Something went wrong. Please try again later.');
+        } else {
+          console.log('Email sent:', info.response);
+          res.writeHead(200, { 'Content-Type': 'text/plain' });
+          res.end('Thank you for your message. We will get back to you soon.');
+        }
+      });
     });
   } else {
     fs.readFile(path.join(__dirname, 'public', req.url), (err, content) => {
