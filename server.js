@@ -41,7 +41,7 @@ const server = http.createServer((req, res) => {
         from: email,
         to: 'carmen@sendit.works',
         subject: 'New message from SendIt contact form',
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+        text: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
