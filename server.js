@@ -33,7 +33,7 @@ const server = http.createServer((req, res) => {
         service: 'gmail',
         auth: {
           user: 'sendit.works.node@gmail.com',
-          pass: '7S*Fbk&3diMp^L'
+          pass: 'wkvk amjh bayc hwmi'
         }
       });
 
