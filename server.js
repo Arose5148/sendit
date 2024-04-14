@@ -1,58 +1,109 @@
-const express = require('express');
-const nodemailer = require('nodemailer');
-const path = require('path');
+const http = require('http');
 const fs = require('fs');
+const path = require('path');
+const querystring = require('querystring');
 
-const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
+const server = http.createServer((req, res) => {
+  // Serve static files from the 'public' directory
+  if (req.url === '/') {
+    fs.readFile(path.join(__dirname, 'public', 'index.html'), (err, content) => {
+      if (err) throw err;
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(content);
+    });
+  } else if (req.url === '/submit-form' && req.method === 'POST') {
+    let requestBody = '';
 
-// Parse URL-encoded bodies
-app.use(express.urlencoded({ extended: true }));
+    req.on('data', chunk => {
+      requestBody += chunk.toString();
+    });
 
-// Serve the index.html file for the root route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    req.on('end', () => {
+      const formData = querystring.parse(requestBody);
+      const { name, email, message } = formData;
+
+      // Process the form data and send email
+      const nodemailer = require('nodemailer');
+
+      const transporter = nodemailer.createTransport({
+        // Configure your email service provider settings here
+        // For example, using Gmail SMTP:
+        service: 'gmail',
+        auth: {
+          user: 'sendit.works.node@gmail.com',
+          pass: 'wkvk amjh bayc hwmi'
+        }
+      });
+
+      const mailOptions = {
+        from: email,
+        to: 'carmen@sendit.works',
+        subject: 'New message from SendIt contact form',
+        text: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`
+      };
+
+		transporter.sendMail(mailOptions, (error, info) => {
+		  if (error) {
+			console.error('Error sending email:', error);
+			res.writeHead(500, { 'Content-Type': 'text/html' });
+			res.end(`
+			  <!DOCTYPE html>
+			  <html>
+				<head>
+				  <title>Error</title>
+				  <link rel="stylesheet" href="/styles.css">
+				</head>
+				<body>
+				  <div class="container">
+					<h1>Oops! Something went wrong.</h1>
+					<p>There was an error processing your request. Please try again later.</p>
+					<a href="/" class="button">Go back to the main page</a>
+				  </div>
+				</body>
+			  </html>
+			`);
+		  } else {
+			console.log('Email sent:', info.response);
+			res.writeHead(200, { 'Content-Type': 'text/html' });
+			res.end(`
+			  <!DOCTYPE html>
+			  <html>
+				<head>
+				  <title>Success</title>
+				  <link rel="stylesheet" href="styles.css">
+				</head>
+				<body>
+				  <div class="container">
+					<h1>Thank you for your message!</h1>
+					<p>We have received your message and will get back to you soon.</p>
+					<a href="/" class="button">Go back to the main page</a>
+				  </div>
+				</body>
+			  </html>
+			`);
+		  }
+		});
+    });
+  } else {
+    fs.readFile(path.join(__dirname, 'public', req.url), (err, content) => {
+      if (err) {
+        if (err.code === 'ENOENT') {
+          res.writeHead(404);
+          res.end('File not found');
+        } else {
+          res.writeHead(500);
+          res.end('Internal Server Error');
+        }
+      } else {
+        res.writeHead(200);
+        res.end(content);
+      }
+    });
+  }
 });
 
-// Handle form submission
-app.post('/submit-form', (req, res) => {
-  const { name, email, message } = req.body;
-
-  // Create a Nodemailer transporter
-  const transporter = nodemailer.createTransport({
-    // Configure your email service provider settings here
-    // For example, using Gmail SMTP:
-    service: 'gmail',
-    auth: {
-      user: 'sendit.works.node@gmail.com',
-      pass: 'wkvk amjh bayc hwmi'
-    }
-  });
-
-  // Set up the email options
-  const mailOptions = {
-    from: email,
-    to: 'carmen@sendit.works',
-    subject: 'New message from SendIt contact form',
-    text: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`
-  };
-
-  // Send the email
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error('Error sending email:', error);
-      res.status(500).send('Error sending message. Please try again later.');
-    } else {
-      console.log('Email sent:', info.response);
-      res.send('Message sent successfully!');
-    }
-  });
-});
-
-// Start the server
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
