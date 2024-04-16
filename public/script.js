@@ -36,3 +36,11 @@ lightbox.addEventListener("click", handleLightboxClick);
 function closeMenu() {
     document.getElementById('menu-checkbox').checked = false;
 }
+
+//Replaces hero background palceholder with image
+document.addEventListener('DOMContentLoaded', function() {
+  var heroImage = document.querySelector('.hero-image');
+  heroImage.addEventListener('load', function() {
+    heroImage.classList.add('loaded');
+  });
+});
