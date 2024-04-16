@@ -333,6 +333,7 @@ section h2 {
 }
 
 /* Testimonials Section */
+/* Testimonials Section */
 .testimonials {
   margin-bottom: 20px;
 }
@@ -350,9 +351,17 @@ section h2 {
 }
 
 .testimonial-item {
-  padding: 60px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  padding: 30px;
   text-align: center;
-  border: 2px solid #d87000;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.06);
 }
 
 .testimonial-item p {
@@ -366,10 +375,6 @@ section h2 {
   font-weight: bold;
   color: #d87000;
   text-transform: uppercase;
-}
-
-.testimonial-author {
-  font-weight: bold;
 }
 
 /* Contact Section */
