@@ -22,13 +22,11 @@ app.post('/submit-form', (req, res) => {
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-    host: 'smtpout.secureserver.net',
-    port: 465,
-    secure: true,
-    auth: {
-      user: 'noreply@sendit.works',
-      pass: 'qekh wlvm nblw ccno'
-    }
+	service: 'gmail',
+	auth: {
+	  user: 'sendit.works.noreply@gmail.com',
+	  pass: 'your_gmail_password'
+	}
   });
 
   const mailOptions = {
