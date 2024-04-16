@@ -30,7 +30,7 @@ app.post('/submit-form', (req, res) => {
   });
 
   const mailOptions = {
-    from: 'noreply@sendit.works',
+    from: 'sendit.works.noreply@gmail.com',
     to: 'carmen@sendit.works',
     subject: 'New message from SendIt contact form',
     text: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`
