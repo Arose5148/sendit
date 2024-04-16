@@ -27,7 +27,7 @@ app.post('/submit-form', (req, res) => {
     secure: true,
     auth: {
       user: 'noreply@sendit.works',
-      pass: 'Pszi$5uhzLmV%*'
+      pass: 'qekh wlvm nblw ccno'
     }
   });
 
