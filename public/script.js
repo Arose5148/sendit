@@ -40,20 +40,14 @@ function closeMenu() {
 }
 
 // Hero background image loading
-document.addEventListener('DOMContentLoaded', function () {
-    var heroImage = document.querySelector('.hero-image');
-    var heroPlaceholder = document.querySelector('.hero-placeholder');
+document.addEventListener('DOMContentLoaded', function() {
+  var heroImage = document.querySelector('.hero-image');
+  var heroPlaceholder = document.querySelector('.hero-placeholder');
 
-    function loadHeroImage() {
-        heroImage.style.opacity = '1';
-        setTimeout(function () {
-            heroPlaceholder.style.display = 'none';
-        }, 500);
-    }
-
-    if (heroImage.complete) {
-        loadHeroImage();
-    } else {
-        heroImage.addEventListener('load', loadHeroImage);
-    }
+  heroImage.addEventListener('load', function() {
+    heroImage.classList.add('loaded');
+    setTimeout(function() {
+      heroPlaceholder.style.opacity = '0';
+    }, 500);
+  });
 });
