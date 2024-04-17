@@ -40,15 +40,11 @@ function closeMenu() {
 }
 
 // Hero background image loading
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var heroImage = document.querySelector('.hero-image');
-  var heroPlaceholder = document.querySelector('.hero-placeholder');
 
   function loadHeroImage() {
-    heroImage.style.opacity = '1';
-    setTimeout(function() {
-      heroPlaceholder.style.opacity = '0';
-    }, 500);
+    heroImage.classList.add('loaded');
   }
 
   if (heroImage.complete) {
