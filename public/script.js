@@ -44,10 +44,16 @@ document.addEventListener('DOMContentLoaded', function() {
   var heroImage = document.querySelector('.hero-image');
   var heroPlaceholder = document.querySelector('.hero-placeholder');
 
-  heroImage.addEventListener('load', function() {
-    heroImage.classList.add('loaded');
+  function loadHeroImage() {
+    heroImage.style.opacity = '1';
     setTimeout(function() {
       heroPlaceholder.style.opacity = '0';
     }, 500);
-  });
+  }
+
+  if (heroImage.complete) {
+    loadHeroImage();
+  } else {
+    heroImage.addEventListener('load', loadHeroImage);
+  }
 });
