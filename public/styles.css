@@ -9,6 +9,17 @@ body {
   background-color: #f8f8f8;
   color: #333;
   line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
 }
 
 /* Header */
@@ -195,6 +206,21 @@ nav {
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
+}
+
+.content-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio (height / width * 100) */
+  overflow: hidden;
+}
+
+.content-container > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 section {
@@ -490,8 +516,8 @@ footer {
 
 /* Media query for mobile devices */
 @media screen and (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  .content-wrapper {
+    padding: 20px;
   }
 
   .menu {
