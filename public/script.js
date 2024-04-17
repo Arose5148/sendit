@@ -1,3 +1,5 @@
+// script.js
+
 // JavaScript code for lightbox functionality
 function openLightbox(img) {
     var lightbox = document.getElementById("lightbox");
@@ -32,15 +34,26 @@ function handleLightboxClick(event) {
 var lightbox = document.getElementById("lightbox");
 lightbox.addEventListener("click", handleLightboxClick);
 
-//Close the hamburger menu when making a selection
+// Close the hamburger menu when making a selection
 function closeMenu() {
     document.getElementById('menu-checkbox').checked = false;
 }
 
-//Replaces hero background palceholder with image
-document.addEventListener('DOMContentLoaded', function() {
-  var heroImage = document.querySelector('.hero-image');
-  heroImage.addEventListener('load', function() {
-    heroImage.classList.add('loaded');
-  });
+// Hero background image loading
+document.addEventListener('DOMContentLoaded', function () {
+    var heroImage = document.querySelector('.hero-image');
+    var heroPlaceholder = document.querySelector('.hero-placeholder');
+
+    function loadHeroImage() {
+        heroImage.style.opacity = '1';
+        setTimeout(function () {
+            heroPlaceholder.style.display = 'none';
+        }, 500);
+    }
+
+    if (heroImage.complete) {
+        loadHeroImage();
+    } else {
+        heroImage.addEventListener('load', loadHeroImage);
+    }
 });

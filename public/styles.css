@@ -206,6 +206,7 @@ nav {
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
+  min-height: 200px; /* Add a min-height to prevent layout shifts */
 }
 
 .content-container {
@@ -359,7 +360,6 @@ section h2 {
 }
 
 /* Testimonials Section */
-/* Testimonials Section */
 .testimonials {
   margin-bottom: 20px;
 }
@@ -383,6 +383,7 @@ section h2 {
   padding: 30px;
   text-align: center;
   transition: transform 0.3s ease;
+  min-height: 150px; /* Add a min-height to prevent layout shifts */
 }
 
 .testimonial-item:hover {
