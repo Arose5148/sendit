@@ -6,6 +6,24 @@ const nodemailer = require('nodemailer');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Redirect www to non-www and enforce HTTPS
+app.use((req, res, next) => {
+  const host = req.headers.host;
+  const isWWW = host.startsWith('www.');
+  const isHTTPS = req.headers['x-forwarded-proto'] === 'https';
+
+  if (!isHTTPS) {
+    return res.redirect(301, `https://${host}${req.url}`);
+  }
+
+  if (isWWW) {
+    const nonWWW = host.replace(/^www\./, '');
+    return res.redirect(301, `https://${nonWWW}${req.url}`);
+  }
+
+  next();
+});
+
 // Middleware to serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
