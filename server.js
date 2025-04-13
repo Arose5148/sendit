@@ -44,20 +44,21 @@ app.post('/submit-form', (req, res) => {
   console.log('Email:', email);
   console.log('Message:', message);
 
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'sendit.works.noreply@gmail.com',
-      pass: 'utax ixmc jnct dmyf'
-    }
-  });
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'senditworks.mx@gmail.com', // your real Gmail login
+    pass: 'paoq fzsx gjwk gbuf' // use the same app password you created
+  }
+});
 
-  const mailOptions = {
-    from: 'sendit.works.noreply@gmail.com',
-    to: 'carmen@sendit.works',
-    subject: 'New message from SendIt contact form',
-    text: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`
-  };
+const mailOptions = {
+  from: 'noreply@sendit.works',
+  to: 'carmen@sendit.works', // or info@ or both — your choice
+  subject: 'New message from SendIt contact form',
+  text: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`
+};
+
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
