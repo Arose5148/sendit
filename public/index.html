@@ -1,208 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SendIt in Style</title>
-    <link rel="icon" type="image/ico" href="/sendit-logo-favicon.ico">
-    <!-- Canonical Tags -->
-    <link rel="canonical" href="https://sendit.works/"> 
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SendIt in Style</title>
+  <link rel="icon" type="image/ico" href="/sendit-logo-favicon.ico">
+  <link rel="canonical" href="https://sendit.works/">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload hero image -->
-    <link rel="preload" href="hero-bg.webp" as="image">
+  <!-- Preload hero image -->
+  <link rel="preload" href="hero-bg.webp" as="image">
 
-    <!-- Load Google Fonts asynchronously -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <!-- Load Google Fonts asynchronously -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
-    <!-- Load Font Awesome asynchronously -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
+  <!-- Load Font Awesome asynchronously -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
 
-    <!-- Inline critical CSS -->
-    <style>
-        /* Add your critical CSS styles here */
-    </style>
+  <!-- Inline Critical CSS -->
+  <style>
+    /* Header & Navigation Critical Styles */
+    header {
+      background-color: #000;
+      padding: 20px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    /* Initially hide the mobile menu */
+    .menu {
+      display: none;
+    }
+    .menu-toggle {
+      display: block;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    /* Display the full menu on larger screens */
+    @media screen and (min-width: 769px) {
+      .menu {
+        display: flex;
+      }
+    }
+    /* Hero Section Critical Styles */
+    .hero {
+      margin-top: 80px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero .hero-image {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .hero .hero-image.loaded {
+      opacity: 1;
+    }
+  </style>
 
-    <!-- Load remaining CSS asynchronously -->
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+  <!-- Load remaining CSS asynchronously -->
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4GEMVNZ8S7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-4GEMVNZ8S7');
-    </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4GEMVNZ8S7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4GEMVNZ8S7');
+  </script>
 </head>
 <body>
-<!-- Header -->
-<header>
-  <nav>
-    <div class="navbar">
-      <div class="logo">
-		<img src="/logo.webp" alt="SendIt Logo" width="100" height="40">
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="navbar">
+        <div class="logo">
+          <img src="/logo.webp" alt="SendIt Logo" width="100" height="40">
+        </div>
+        <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+        <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+        <ul class="menu">
+          <li><a href="#home" onclick="closeMenu()">Home</a></li>
+          <li><a href="#about" onclick="closeMenu()">About</a></li>
+          <li><a href="#services" onclick="closeMenu()">Services</a></li>
+          <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+          <li><a href="#testimonials" onclick="closeMenu()">Testimonials</a></li>
+          <li><a href="#contact" onclick="closeMenu()">Contact Us</a></li>
+        </ul>
       </div>
-      <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
-      <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
-      <ul class="menu">
-        <li><a href="#home" onclick="closeMenu()">Home</a></li>
-        <li><a href="#about" onclick="closeMenu()">About</a></li>
-        <li><a href="#services" onclick="closeMenu()">Services</a></li>
-        <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
-        <li><a href="#testimonials" onclick="closeMenu()">Testimonials</a></li>
-        <li><a href="#contact" onclick="closeMenu()">Contact Us</a></li>
-      </ul>
-    </div>
-    <div class="social-media">
-      <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-    </div>
-  </nav>
-</header>
+      <div class="social-media">
+        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      </div>
+    </nav>
+  </header>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
-	<div class="hero-background">
-		<img src="hero-bg-placeholder.webp" alt="Hero Background" class="hero-placeholder" loading="lazy" width="1280" height="800">
-		<img src="hero-bg.webp" alt="Hero Background" class="hero-image" loading="lazy" width="1280" height="800">
-	</div>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-background">
+      <img src="hero-bg-placeholder.webp" alt="Hero Background" class="hero-placeholder" loading="lazy" width="1280" height="800">
+      <!-- Removed loading="lazy" for the hero image to ensure immediate load -->
+      <img src="hero-bg.webp" alt="Hero Background" class="hero-image" width="1280" height="800">
+    </div>
     <div class="hero-content">
-        <h1>SendIt <span class="subtitle">In Style</span></h1>
-        <a href="#contact" class="cta-button">Go Big</a>
+      <h1>SendIt <span class="subtitle">In Style</span></h1>
+      <a href="#contact" class="cta-button">Go Big</a>
     </div>
-</section>
+  </section>
 
-
-<div class="content-wrapper">
+  <div class="content-wrapper">
     <!-- About Section -->
     <section id="about" class="about tile-section">
-        <h2>About SendIt</h2>
-        <div class="about-content">
-            <p>Carmen, the driving force behind SendIt, has been living and breathing the dirt bike life in the Laurel Highlands for over 40 years. From suspension services to custom wheel setups for shredding the gnarliest tracks, he's got the passion and expertise to help you unleash your machine's full potential. <br><br>He's also the man when it comes to custom metal coatings. Got a hub that needs vapor blasting? Done. Want to Cerakote your engine parts or even your guns? Carmen's all over it</p>
-        </div>
-    </section>  
-        
-<!-- Services Section -->
-	<section id="services" class="services tile-section">
-	  <h2>Services</h2>
-	  <div class="service-grid">
-		<div class="service-item">
-		  <div class="service-image">
-			<img src="wheels.webp" alt="Wheels" loading="lazy" width="748" height="572">
-		  </div>
-		  <h3>Wheels</h3>
-		</div>
-		<div class="service-item">
-		  <div class="service-image">
-			<img src="suspension.webp" alt="Suspension" loading="lazy" width="748" height="572">
-		  </div>
-		  <h3>Suspension</h3>
-		</div>
-		<div class="service-item">
-		  <div class="service-image">
-			<img src="brakes.webp" alt="Brakes" loading="lazy" width="748" height="572">
-		  </div>
-		  <h3>Brakes</h3>
-		</div>
-		<div class="service-item">
-		  <div class="service-image">
-			<img src="engines.webp" alt="Engines" loading="lazy" width="748" height="572">
-		  </div>
-		  <h3>Engines</h3>
-		</div>
-		<div class="service-item">
-		  <div class="service-image">
-			<img src="wet-blasting.webp" alt="Wet Blasting" loading="lazy" width="748" height="572">
-		  </div>
-		  <h3>Wet Blasting</h3>
-		</div>
-		<div class="service-item">
-		  <div class="service-image">
-			<img src="cerakote.webp" alt="CERAKOTE" loading="lazy" width="748" height="572">
-		  </div>
-		  <h3>CERAKOTE</h3>
-		</div>
-	  </div>
-	</section>
-        
-<!-- Gallery Section -->
-	<section id="gallery" class="gallery tile-section">
-	  <h2>Gallery of Work</h2>
-	  <div class="gallery-grid">
-		<div class="gallery-item">
-		  <img src="gallery1.webp" alt="Gallery Image 1" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
-		</div>
-		<div class="gallery-item">
-		  <img src="gallery2.webp" alt="Gallery Image 2" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
-		</div>
-		<div class="gallery-item">
-		  <img src="gallery3.webp" alt="Gallery Image 3" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
-		</div>
-		<div class="gallery-item">
-		  <img src="gallery4.webp" alt="Gallery Image 4" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
-		</div>
-		<div class="gallery-item">
-		  <img src="gallery5.webp" alt="Gallery Image 5" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
-		</div>
-		<div class="gallery-item">
-		  <img src="gallery6.webp" alt="Gallery Image 6" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
-		</div>
-	  </div>
-	</section>
+      <h2>About SendIt</h2>
+      <div class="about-content">
+        <p>Carmen, the driving force behind SendIt, has been living and breathing the dirt bike life in the Laurel Highlands for over 40 years. From suspension services to custom wheel setups for shredding the gnarliest tracks, he's got the passion and expertise to help you unleash your machine's full potential. <br><br>
+        He's also the man when it comes to custom metal coatings. Got a hub that needs vapor blasting? Done. Want to Cerakote your engine parts or even your guns? Carmen's all over it.</p>
+      </div>
+    </section>
 
+    <!-- Services Section -->
+    <section id="services" class="services tile-section">
+      <h2>Services</h2>
+      <div class="service-grid">
+        <div class="service-item">
+          <div class="service-image">
+            <img src="wheels.webp" alt="Wheels" width="748" height="572"
+                 srcset="wheels-small.webp 480w, wheels.webp 800w" sizes="(max-width: 480px) 480px, 800px">
+          </div>
+          <h3>Wheels</h3>
+        </div>
+        <div class="service-item">
+          <div class="service-image">
+            <img src="suspension.webp" alt="Suspension" width="748" height="572"
+                 srcset="suspension-small.webp 480w, suspension.webp 800w" sizes="(max-width: 480px) 480px, 800px">
+          </div>
+          <h3>Suspension</h3>
+        </div>
+        <div class="service-item">
+          <div class="service-image">
+            <img src="brakes.webp" alt="Brakes" width="748" height="572"
+                 srcset="brakes-small.webp 480w, brakes.webp 800w" sizes="(max-width: 480px) 480px, 800px">
+          </div>
+          <h3>Brakes</h3>
+        </div>
+        <div class="service-item">
+          <div class="service-image">
+            <img src="engines.webp" alt="Engines" width="748" height="572"
+                 srcset="engines-small.webp 480w, engines.webp 800w" sizes="(max-width: 480px) 480px, 800px">
+          </div>
+          <h3>Engines</h3>
+        </div>
+        <div class="service-item">
+          <div class="service-image">
+            <img src="wet-blasting.webp" alt="Wet Blasting" width="748" height="572"
+                 srcset="wet-blasting-small.webp 480w, wet-blasting.webp 800w" sizes="(max-width: 480px) 480px, 800px">
+          </div>
+          <h3>Wet Blasting</h3>
+        </div>
+        <div class="service-item">
+          <div class="service-image">
+            <img src="cerakote.webp" alt="CERAKOTE" width="748" height="572"
+                 srcset="cerakote-small.webp 480w, cerakote.webp 800w" sizes="(max-width: 480px) 480px, 800px">
+          </div>
+          <h3>CERAKOTE</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery tile-section">
+      <h2>Gallery of Work</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="gallery1.webp" alt="Gallery Image 1" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
+        </div>
+        <div class="gallery-item">
+          <img src="gallery2.webp" alt="Gallery Image 2" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
+        </div>
+        <div class="gallery-item">
+          <img src="gallery3.webp" alt="Gallery Image 3" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
+        </div>
+        <div class="gallery-item">
+          <img src="gallery4.webp" alt="Gallery Image 4" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
+        </div>
+        <div class="gallery-item">
+          <img src="gallery5.webp" alt="Gallery Image 5" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
+        </div>
+        <div class="gallery-item">
+          <img src="gallery6.webp" alt="Gallery Image 6" loading="lazy" onclick="openLightbox(this)" width="748" height="572">
+        </div>
+      </div>
+    </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials tile-section">
-        <h2>Testimonials</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-item tile-section">
-                <p>"SendIt transformed my bike into a beast. The attention to detail and quality of work is mind-blowing!"</p>
-                <p class="testimonial-author">- John Doe</p>
-            </div>
-            <div class="testimonial-item tile-section">
-                <p>"I couldn't be happier with the custom services provided by SendIt. My ride is now dialed in and ready to dominate!"</p>
-                <p class="testimonial-author">- Jane Smith</p>
-            </div>
+      <h2>Testimonials</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-item tile-section">
+          <p>"SendIt transformed my bike into a beast. The attention to detail and quality of work is mind-blowing!"</p>
+          <p class="testimonial-author">- John Doe</p>
         </div>
+        <div class="testimonial-item tile-section">
+          <p>"I couldn't be happier with the custom services provided by SendIt. My ride is now dialed in and ready to dominate!"</p>
+          <p class="testimonial-author">- Jane Smith</p>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact tile-section">
-        <h2>Contact Us</h2>
-        <div class="contact-form">
-            <form class="contact-form" method="POST" action="/submit-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+      <h2>Contact Us</h2>
+      <div class="contact-form">
+        <form class="contact-form" method="POST" action="/submit-form">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> Brownsville, PA</p>
-                <p><i class="fas fa-envelope"></i> info@sendit.works</p>
-            </div>
+      <div class="footer-content">
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> Brownsville, PA</p>
+          <p><i class="fas fa-envelope"></i> info@sendit.works</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 SendIt. All rights reserved.</p>
-        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 SendIt. All rights reserved.</p>
+      </div>
     </footer>
-    
+
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
       <span class="close" onclick="closeLightbox()">&times;</span>
       <img id="lightboxImage" src="" alt="Lightbox Image">
     </div>
-    
-    <!-- Defer non-critical JavaScript -->
-    <script src="/script.js"></script>
-    
+  </div>
+
+  <!-- Defer non-critical JavaScript -->
+  <script src="/script.js"></script>
 </body>
 </html>
